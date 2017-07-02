@@ -7,12 +7,75 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>AddClimbPage</ion-title>
+    <ion-title>Add Climb</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  
+  <ion-list>
+  
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MM.DD.YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  
+  <ion-row>
+    <ion-item>
+      <ion-select placeholder="Grade...">
+        <ion-option value="1">
+          Grade 1
+        </ion-option>
+        <ion-option value="2">
+          Grade 2
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Completed</ion-label>
+      <ion-checkbox>
+        
+      </ion-checkbox>
+    </ion-item>
+  </ion-row>
+  </ion-list>
+  
+  <ion-list radio-group>
+    <ion-item>
+      <ion-label>Clean</ion-label>
+      <ion-radio value="clean" checked="">Clean</ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Aided</ion-label>
+      <ion-radio value="aided">Aided</ion-radio>
+    </ion-item>
+  </ion-list>
+  
+  <ion-item>
+    <ion-input placeholder="Route Name"></ion-input>
+  </ion-item>
+  
+  <ion-list radio-group>
+    <ion-label>Mood</ion-label>
+    <ion-item>
+      <ion-radio value="bad"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-radio value="okay"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-radio value="good"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-radio value="great"></ion-radio>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input placeholder="Notes..."></ion-input>
+    </ion-item>
+    
+  </ion-list>
 </ion-content>

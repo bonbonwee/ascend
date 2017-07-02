@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { List } from 'ionic-angular';
 
 /**
  * Generated class for the AddClimbPage page.

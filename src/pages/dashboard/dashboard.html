@@ -7,12 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>DashboardPage</ion-title>
+    <ion-title>My Dashboard</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  
+  <button ion-button class="button" (click)="addClimb()">
+    Add Climb
+  </button>
+  
+  <ion-list no-lines>
+    <ion-item>
+      <h2>Recently Logged Climbs</h2>
+    </ion-item>
+    <ion-item>
+      List goes here...
+    </ion-item>
+  </ion-list>
+  
+  <button ion-button class="button">
+    Summary
+  </button>
+  
+  <button ion-button class="button" (click)="viewHistory()">
+    History
+  </button>
 
 </ion-content>
