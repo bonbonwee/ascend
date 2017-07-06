@@ -15,19 +15,31 @@
 
 <ion-content padding>
 
-  
-  <ion-label color="primary" fixed>First Name</ion-label>
-  <ion-input type="email" placeholder="John">  </ion-input>
-  
-  <ion-label color="primary" fixed>Last Name</ion-label>
-  <ion-input type="email" placeholder="Doe">  </ion-input>
-  
-  <ion-label color="primary" fixed>User Email:</ion-label>
-  <ion-input type="email" placeholder="johndoe@email.com">  </ion-input>
-  
-  <ion-label color="primary">Password:</ion-label>
-  <ion-input type="password" placeholder="*****">  </ion-input>
-  
-  <button class="button">Submit</button>
+  <form #registerForm="ngForm" (ngSubmit)="signUp(registerForm)" novalidate>
+    
+    <ion-item>
+      <ion-label color="primary" fixed>First Name</ion-label>
+      <ion-input name="firstName" type="string" placeholder="John" [(ngModel)]="user.firstName" required>  </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color="primary" fixed>Last Name</ion-label>
+      <ion-input name="lastName" type="string" placeholder="Doe" [(ngModel)]="user.lastName" required>  </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color="primary" fixed>User Email:</ion-label>
+      <ion-input name="email" type="email" placeholder="johndoe@email.com" [(ngModel)]="user.email" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color="primary">Password:</ion-label>
+      <ion-input name="password" type="password" placeholder="*****" [(ngModel)]="user.password" required>  </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <button ion-button type="submit" class="button-block">Submit</button>
+    </ion-item>
+  </form> 
 
 </ion-content>

@@ -22,60 +22,87 @@
     <ion-datetime displayFormat="MM.DD.YYYY" [(ngModel)]="myDate"></ion-datetime>
   </ion-item>
   
-  <ion-row>
-    <ion-item>
-      <ion-select placeholder="Grade...">
-        <ion-option value="1">
-          Grade 1
-        </ion-option>
-        <ion-option value="2">
-          Grade 2
-        </ion-option>
-      </ion-select>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Completed</ion-label>
-      <ion-checkbox>
-        
-      </ion-checkbox>
-    </ion-item>
-  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item>
+          <ion-select placeholder="Grade">
+            <ion-option value="1">
+              Grade 1
+            </ion-option>
+            <ion-option value="2">
+              Grade 2
+            </ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col col-5>
+        <ion-item>
+          <ion-label>Completed</ion-label>
+          <ion-checkbox>
+            
+          </ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
   </ion-list>
   
-  <ion-list radio-group>
-    <ion-item>
-      <ion-label>Clean</ion-label>
-      <ion-radio value="clean" checked="">Clean</ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Aided</ion-label>
-      <ion-radio value="aided">Aided</ion-radio>
-    </ion-item>
-  </ion-list>
+  <ion-grid radio-group>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Clean</ion-label>
+          <ion-radio value="clean" checked="">Clean</ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Aided</ion-label>
+          <ion-radio value="aided">Aided</ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
   <ion-item>
     <ion-input placeholder="Route Name"></ion-input>
   </ion-item>
   
-  <ion-list radio-group>
+  <ion-grid radio-group>
     <ion-label>Mood</ion-label>
-    <ion-item>
-      <ion-radio value="bad"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-radio value="okay"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-radio value="good"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-radio value="great"></ion-radio>
-    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+        <ion-radio value="bad"></ion-radio>
+      </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-radio value="okay"></ion-radio>
+      </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-radio value="good"></ion-radio>
+      </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+        <ion-radio value="great"></ion-radio>
+      </ion-item>
+      </ion-col>
+    </ion-row>
     
     <ion-item>
-      <ion-input placeholder="Notes..."></ion-input>
+      <ion-input type="text" placeholder="Notes..."></ion-input>
     </ion-item>
     
-  </ion-list>
+  </ion-grid>
+  
+  <button ion-button class="button">
+    Record
+  </button>
+  
 </ion-content>
