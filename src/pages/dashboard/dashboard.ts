@@ -3,8 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { List } from 'ionic-angular';
 import { ViewHistoryPage } from '../view-history/view-history';
 import { AddClimbPage } from '../add-climb/add-climb';
-
-
+import { LandingPage } from '../landing/landing';
+import { UsersProvider } from '../../providers/users/users';
 
 /**
  * Generated class for the DashboardPage page.
@@ -20,8 +20,12 @@ import { AddClimbPage } from '../add-climb/add-climb';
 export class DashboardPage {
   
   //@ViewChild(List) list: list;
+  token: any = String
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public users: UsersProvider) {
   }
 
   ionViewDidLoad() {
@@ -41,6 +45,12 @@ export class DashboardPage {
     this.navCtrl.push(ViewHistoryPage);
   }
   
-  
+  logoff() {
+    console.log("the logoff function starts to execute");
+    console.log("token value for logoff is " + window.localStorage.getItem("token"));
+    this.token = window.localStorage.getItem("token");
+    this.users.logout(this.token);
+    this.navCtrl.push(LandingPage);
+  }
 
 }

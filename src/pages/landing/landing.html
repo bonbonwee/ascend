@@ -15,15 +15,22 @@
 
 <ion-content padding>
   
-  <ion-label color="primary" fixed>User Email:</ion-label>
-  <ion-input type="email" placeholder="email">  </ion-input>
-  
-  <ion-label color="primary">Password:</ion-label>
-  <ion-input type="password" placeholder="password">  </ion-input>
-  
-  <button ion-button class="button" (click)="login()">
-    Log in
-  </button>
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" novalidate>
+    
+    <ion-item>
+      <ion-label>User Email:</ion-label>
+      <ion-input name="email" type="email" placeholder="email" [(ngModel)]="user.email" required>  </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input name="password" type="password" placeholder="password" [(ngModel)]="user.password" required>  </ion-input>
+    </ion-item>
+    
+    <button ion-button type="submit" class="button" >
+      Log in
+    </button>
+  </form>
   
   <p>new user?</p>
   
