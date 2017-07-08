@@ -15,94 +15,154 @@
 
 <ion-content padding>
   
-  <ion-list>
+  <form #climbForm="ngForm" (ngSubmit)="addClimb(climbForm)" novalidate>
   
-  <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-datetime displayFormat="MM.DD.YYYY" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-  
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6>
-        <ion-item>
-          <ion-select placeholder="Grade">
-            <ion-option value="1">
-              Grade 1
-            </ion-option>
-            <ion-option value="2">
-              Grade 2
-            </ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-      <ion-col col-5>
-        <ion-item>
-          <ion-label>Completed</ion-label>
-          <ion-checkbox>
-            
-          </ion-checkbox>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
-  </ion-list>
-  
-  <ion-grid radio-group>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label>Clean</ion-label>
-          <ion-radio value="clean" checked="">Clean</ion-radio>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label>Aided</ion-label>
-          <ion-radio value="aided">Aided</ion-radio>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
-  <ion-item>
-    <ion-input placeholder="Route Name"></ion-input>
-  </ion-item>
-  
-  <ion-grid radio-group>
-    <ion-label>Mood</ion-label>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-        <ion-radio value="bad"></ion-radio>
-      </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-        <ion-radio value="okay"></ion-radio>
-      </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-        <ion-radio value="good"></ion-radio>
-      </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-        <ion-radio value="great"></ion-radio>
-      </ion-item>
-      </ion-col>
-    </ion-row>
+    <ion-list>
     
     <ion-item>
-      <ion-input type="text" placeholder="Notes..."></ion-input>
+      <ion-label>Date</ion-label>
+      <ion-datetime name="Date" type="date" displayFormat="MM.DD.YYYY" [(ngModel)]="climb.Date" required></ion-datetime>
     </ion-item>
     
-  </ion-grid>
-  
-  <button ion-button class="button">
-    Record
-  </button>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-select name="Grade" type="number" placeholder="Grade" [(ngModel)]="climb.Grade" required>
+              <ion-option value="5">
+                5.5
+              </ion-option>
+              <ion-option value="6">
+                5.6
+              </ion-option>
+              <ion-option value="7">
+                5.7
+              </ion-option>
+              <ion-option value="8">
+                5.8
+              </ion-option>
+              <ion-option value="9">
+                5.9
+              </ion-option>
+              <ion-option value="10">
+                5.10a
+              </ion-option>
+              <ion-option value="10.25">
+                5.10b
+              </ion-option>
+              <ion-option value="10.5">
+                5.10c
+              </ion-option>
+              <ion-option value="10.75">
+                5.10d
+              </ion-option>
+              <ion-option value="11">
+                5.11a
+              </ion-option>
+              <ion-option value="11.25">
+                5.11b
+              </ion-option>
+              <ion-option value="11.5">
+                5.11c
+              </ion-option>
+              <ion-option value="11.75">
+                5.11d
+              </ion-option>
+              <ion-option value="12">
+                5.12a
+              </ion-option>
+              <ion-option value="12.25">
+                5.12b
+              </ion-option>
+              <ion-option value="12.5">
+                5.12c
+              </ion-option>
+              <ion-option value="12.75">
+                5.12d
+              </ion-option>
+              <ion-option value="13">
+                5.13a
+              </ion-option>
+              <ion-option value="13.25">
+                5.13b
+              </ion-option>
+              <ion-option value="13.5">
+                5.13c
+              </ion-option>
+              <ion-option value="13.75">
+                5.13d
+              </ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item>
+            <ion-label>Completed</ion-label>
+            <ion-checkbox name="Completed" type="checkbox" [(ngModel)]="climb.Completed" required>
+              
+            </ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    </ion-list>
+    
+    <ion-grid radio-group>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Clean</ion-label>
+            <ion-radio value="clean" checked="">Clean</ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Aided</ion-label>
+            <ion-radio value="aided">Aided</ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <ion-item>
+      <ion-input placeholder="Route Name"></ion-input>
+    </ion-item>
+    
+    <ion-grid radio-group>
+      <ion-label>Mood</ion-label>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+          <ion-radio value="bad"></ion-radio>
+        </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+          <ion-radio value="okay"></ion-radio>
+        </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+          <ion-radio value="good"></ion-radio>
+        </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+          <ion-radio value="great"></ion-radio>
+        </ion-item>
+        </ion-col>
+      </ion-row>
+      
+      <ion-item>
+        <ion-input type="text" placeholder="Notes..."></ion-input>
+      </ion-item>
+      
+    </ion-grid>
+    
+    <button ion-button type="submit" class="button">
+      Record
+    </button>
+  </form>
   
 </ion-content>

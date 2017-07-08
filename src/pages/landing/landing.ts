@@ -62,7 +62,6 @@ export class LandingPage {
         }
       });
     }
-    this.navCtrl.push(DashboardPage);
   }
   
   register() {
