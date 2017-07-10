@@ -21,11 +21,11 @@
       
     <ion-grid>
       <ion-row>
-        <ion-col>
+        <ion-col col-5>
           <ion-label><strong color="danger">*</strong> Date</ion-label>
          </ion-col>
           
-        <ion-col col-5>
+        <ion-col col-7>
           <ion-datetime name="Date" type="datetime-local" placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="climb.Date" required></ion-datetime>
         </ion-col>
       </ion-row>
@@ -36,7 +36,7 @@
         </ion-col>
         <ion-col col-7>
           <ion-item>
-            <ion-select name="Grade" type="number" max-width="100%" min-width="100%" placeholder="Select..." [(ngModel)]="climb.Grade" required>
+            <ion-select name="Grade" type="number" class="myCustomSelect" placeholder="Select..." [(ngModel)]="climb.Grade" required >
               <ion-option value="5">
                 5.5
               </ion-option>
@@ -121,28 +121,28 @@
     </ion-grid>
 
       
-    <ion-grid radio-group *ngIf="showhideCompleted">
+    <ion-grid radio-group name="Clean" *ngIf="showhideCompleted" [(ngModel)]="climb.Clean">
       <ion-row>
         <ion-col>
           <ion-item>
             <ion-label>Clean</ion-label>
-            <ion-radio value="clean" checked="">Clean</ion-radio>
+            <ion-radio value="true" checked="">Clean</ion-radio>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label>Aided</ion-label>
-            <ion-radio value="aided">Aided</ion-radio>
+            <ion-radio value="false">Aided</ion-radio>
           </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>
     
     <ion-item>
-      <ion-input placeholder="Route Name"></ion-input>
+      <ion-input name="RouteName" placeholder="Route Name" [(ngModel)]="climb.RouteName"></ion-input>
     </ion-item>
     
-    <ion-grid radio-group>
+    <ion-grid name="Mood" radio-group [(ngModel)]="climb.Mood">
       
       <ion-row>
         <ion-col col-4>
@@ -153,7 +153,7 @@
           <ion-label>
             <ion-icon large name = "happy"></ion-icon>
           </ion-label>
-          <ion-radio value="happy"></ion-radio>
+          <ion-radio value="1"></ion-radio>
         </ion-item>
         </ion-col>
         <ion-col col-4>
@@ -161,13 +161,13 @@
             <ion-label>
             <ion-icon large name = "sad"></ion-icon>
           </ion-label>
-          <ion-radio value="sad"></ion-radio>
+          <ion-radio value="0"></ion-radio>
         </ion-item>
         </ion-col>
       </ion-row>
       
       <ion-item>
-        <ion-input type="text" placeholder="Notes..."></ion-input>
+        <ion-input name="Notes" type="text" placeholder="Notes..." [(ngModel)]="climb.Notes"></ion-input>
       </ion-item>
       
     </ion-grid>

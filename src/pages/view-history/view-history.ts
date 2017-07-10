@@ -15,8 +15,8 @@ import { TopRopeClimbsProvider } from '../../providers/top-rope-climbs/top-rope-
 })
 export class ViewHistoryPage {
   
-  climbs: Object = []
-  todayDate: String = new Date().toISOString();
+  climbs: Object = [];
+  
 
   constructor(
     public navCtrl: NavController, 
@@ -28,6 +28,8 @@ export class ViewHistoryPage {
     console.log('ionViewDidLoad ViewHistoryPage');
     //console.log("return object from getClimbs function" + this.trClimbs.getClimbs(window.localStorage.getItem("userId"), window.localStorage.getItem("token")));
     
+    let tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds of timezone difference to UTC
+
     /**
      ** Retrieves climbing data specific to user
      **/
@@ -38,6 +40,10 @@ export class ViewHistoryPage {
       console.log(res[0]);
       console.log(res[1]);
       this.climbs = res;    //store response to climbs variable
+      
+      
+      
+      console.log(this.climbs);
 
     }, err => {             //inform user of known problems that arose, otherwise give generic failed message
       alert("Error: Could not retrieve climbing data!\n" + err);

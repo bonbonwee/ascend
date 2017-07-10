@@ -40,5 +40,13 @@ export class TopRopeClimbsProvider {
       this.baseUrl + this.path + '?filter[where][userId]=' + userId + '&access_token=' + token
     );
   }
+  
+  getTodaysClimbs(userId, date, token) {
+    console.log("getTodaysClimbs is called");
+    console.log(this.baseUrl + this.path + '?filter=[where][userId]=' + userId + '&filter[where][Date]=' + date + '&access_token=' + token);
+    return this.http.get(
+      this.baseUrl + this.path + '?filter[where][userId]=' + userId + '&filter[where][Date][gte]=' + date + '&access_token=' + token
+    );
+  }
 
 }

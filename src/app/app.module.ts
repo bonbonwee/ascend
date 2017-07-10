@@ -11,6 +11,8 @@ import { RegisterPage } from '../pages/register/register';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { AddClimbPage } from '../pages/add-climb/add-climb';
 import { ViewHistoryPage } from '../pages/view-history/view-history';
+import { SummaryPage } from '../pages/summary/summary';
+
 import { UsersProvider } from '../providers/users/users';
 import { TopRopeClimbsProvider } from '../providers/top-rope-climbs/top-rope-climbs';
 
@@ -20,7 +22,8 @@ let injections: any[] = [
     RegisterPage,
     DashboardPage,
     AddClimbPage,
-    ViewHistoryPage
+    ViewHistoryPage,
+    SummaryPage
   ]
 
 @NgModule({

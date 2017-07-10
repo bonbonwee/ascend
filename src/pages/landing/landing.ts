@@ -20,7 +20,7 @@ import { UsersProvider } from '../../providers/users/users';
 
 export class LandingPage {
   
-  user: Object = {}
+  user: Object = {};
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,

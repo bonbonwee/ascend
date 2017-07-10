@@ -8,9 +8,6 @@
 
   <ion-navbar color="secondary" text-center>
     <ion-title>My Dashboard</ion-title>
-    <button ion-button small color="primary" (click)="logoff()">
-      <ion-icon name = "log-out"></ion-icon>
-    </button>
   </ion-navbar>
 
 </ion-header>
@@ -19,22 +16,27 @@
 <ion-content padding>
   
   <button ion-button class="button-block" (click)="addClimb()">
-    Add Climb
+    Add Climb to Record
   </button>
   
   <h3 text-center>Today's Climbs</h3>
   
-  <ion-list no-lines>
-    <ion-item>
-      
-    </ion-item>
-    <ion-item>
-      List goes here...
-    </ion-item>
+  <ion-list *ngFor="let climb of climbs; let i = index;" no-lines>
+    <ion-row>
+      <ion-col col-4>
+        Climb {{i + 1}}: 
+      </ion-col>
+      <ion-col col-4>
+        5.{{climb.Grade}} 
+      </ion-col>
+      <ion-col col-4 *ngIf="climb.Completed">
+        Completed
+      </ion-col>
+    </ion-row>
   </ion-list>
   
   <div text-align="center" margin="auto">
-    <button ion-button class="button-block" color="secondary" width="auto">
+    <button ion-button class="button-block" (click)="viewSummary()" color="secondary" width="auto">
       Summary
     </button>
     
@@ -42,5 +44,19 @@
       History
     </button>
   </div>
+  <br>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4></ion-col>
+      <ion-col col-4 text-center>
+        <button ion-button class="button" color="dark" (click)="logoff()">
+          exit <ion-icon end name="log-out"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-4></ion-col>
+    </ion-row>
+  </ion-grid>
+  
 
 </ion-content>

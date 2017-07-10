@@ -17,8 +17,8 @@ import { DashboardPage } from '../dashboard/dashboard'
 })
 export class AddClimbPage {
   
-  climb: any = {} //not sure if this is the right declaration
-  showhideCompleted: boolean = false
+  climb: any = {}; //not sure if this is the right declaration
+  showhideCompleted: boolean = false;
   
   //this.climb.userId = ""
 
