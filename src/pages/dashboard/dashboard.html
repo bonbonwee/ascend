@@ -6,11 +6,10 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="secondary" text-center>
     <ion-title>My Dashboard</ion-title>
-    <button ion-button icon-end small color="light" (click)="logoff()">
-      <ion-icon name = "home"></ion-icon>
-      Logout
+    <button ion-button small color="primary" (click)="logoff()">
+      <ion-icon name = "log-out"></ion-icon>
     </button>
   </ion-navbar>
 
@@ -19,25 +18,29 @@
 
 <ion-content padding>
   
-  <button ion-button class="button" (click)="addClimb()">
+  <button ion-button class="button-block" (click)="addClimb()">
     Add Climb
   </button>
   
+  <h3 text-center>Today's Climbs</h3>
+  
   <ion-list no-lines>
     <ion-item>
-      <h2>Recently Logged Climbs</h2>
+      
     </ion-item>
     <ion-item>
       List goes here...
     </ion-item>
   </ion-list>
   
-  <button ion-button class="button">
-    Summary
-  </button>
-  
-  <button ion-button class="button" (click)="viewHistory()">
-    History
-  </button>
+  <div text-align="center" margin="auto">
+    <button ion-button class="button-block" color="secondary" width="auto">
+      Summary
+    </button>
+    
+    <button ion-button class="button-block" (click)="viewHistory()" color="secondary" width="auto">
+      History
+    </button>
+  </div>
 
 </ion-content>

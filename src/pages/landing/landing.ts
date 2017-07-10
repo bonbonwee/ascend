@@ -54,7 +54,7 @@ export class LandingPage {
         } else if (err.status == 403) {
           return alert("Forbidden");
         } else if (err.status == 401) {
-          return alert("Unauthorized");
+          return alert("Unauthorized - please make sure you've entered password correctly");
         } else if (err.status == 500) {
           return alert("Server is offline");
         } else {

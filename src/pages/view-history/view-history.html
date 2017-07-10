@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="secondary" text-center>
     <ion-title>History</ion-title>
   </ion-navbar>
 
@@ -15,15 +15,20 @@
 
 <ion-content padding>
   
-  <h2>Recorded Routes</h2>
+  <h3 text-center>Logged Routes</h3>
   
-  <ion-list no-lines>
+  <ion-list *ngFor="let climb of climbs; let i = index;" no-lines>
+    Climb {{climbs.length - i}}
     <ion-item>
-      <h2>Logged Climbs</h2>
+      Grade: 5.{{climb.Grade}}
     </ion-item>
     <ion-item>
-      List goes here...
+      Date: {{climb.Date | date:'MM/dd/yy':'+1200'}} 
     </ion-item>
+    <ion-item>
+      Completed: {{climb.Completed}}
+    </ion-item>
+    
   </ion-list>
 
 </ion-content>

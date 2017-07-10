@@ -18,6 +18,8 @@ import { DashboardPage } from '../dashboard/dashboard'
 export class AddClimbPage {
   
   climb: any = {} //not sure if this is the right declaration
+  showhideCompleted: boolean = false
+  
   //this.climb.userId = ""
 
   constructor(
@@ -28,13 +30,20 @@ export class AddClimbPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddClimbPage');
+    this.climb.Date = new Date().toISOString(); //set time to current day in UTC time
+    let tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds of timezone difference to UTC
+    console.log("date recorded is " + this.climb.Date);
+    this.climb.Date = (new Date(Date.now() - tzoffset)).toISOString().slice(0,-1); //corrected time zone
+    console.log("date recorded after offset is "+ this.climb.Date);
+    this.climb.Completed = false; //set default value to false
   }
   
   addClimb(climbForm) {
     if(climbForm.invalid) {
-      alert("Please fill in all required fields.");
+      alert("Please fill in all required fields marked with *.");
     } else {
       this.climb.userId = window.localStorage.getItem('userId');
+      
       this.climbsProv.submitClimb(this.climb, window.localStorage.getItem('token'))
       .map(res => res.json())
       .subscribe(res => {
@@ -64,6 +73,15 @@ export class AddClimbPage {
           alert("Error, unhandled status code");
         }
       });
+    }
+  }
+  
+  showClean(){
+    if(this.showhideCompleted == false){
+      this.showhideCompleted = true;
+    }
+    else {
+      this.showhideCompleted = false;
     }
   }
 }

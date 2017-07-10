@@ -16,6 +16,7 @@ import { TopRopeClimbsProvider } from '../../providers/top-rope-climbs/top-rope-
 export class ViewHistoryPage {
   
   climbs: Object = []
+  todayDate: String = new Date().toISOString();
 
   constructor(
     public navCtrl: NavController, 
@@ -36,7 +37,7 @@ export class ViewHistoryPage {
       console.log("response is " + res);
       console.log(res[0]);
       console.log(res[1]);
-
+      this.climbs = res;    //store response to climbs variable
 
     }, err => {             //inform user of known problems that arose, otherwise give generic failed message
       alert("Error: Could not retrieve climbing data!\n" + err);
